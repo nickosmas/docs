@@ -1,0 +1,107 @@
+{
+  "projectType": "saas",
+  "projectName": "DubGrid",
+  "projectDescription": "Multi-tenant employee scheduling platform for care facilities, replacing spreadsheets with a modern web app featuring real-time collaboration, drag-and-drop shift management, and role-based access control.",
+  "theme": "almond",
+  "primaryColor": "#045c04",
+  "lightColor": null,
+  "darkColor": null,
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "groups": [
+          {
+            "group": "Get Started",
+            "pages": [
+              "introduction",
+              "quickstart",
+              "onboarding"
+            ]
+          },
+          {
+            "group": "Core Features",
+            "pages": [
+              "features/schedule-grid",
+              "features/draft-publish",
+              "features/recurring-shifts",
+              "features/real-time-collaboration",
+              "features/shift-requests",
+              "features/dashboard"
+            ]
+          },
+          {
+            "group": "Staff Management",
+            "pages": [
+              "staff/roster",
+              "staff/detail-page",
+              "staff/invitations"
+            ]
+          },
+          {
+            "group": "Configuration",
+            "pages": [
+              "configuration/organization",
+              "configuration/shift-codes",
+              "configuration/focus-areas",
+              "configuration/coverage-requirements",
+              "configuration/terminology"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Reference",
+        "groups": [
+          {
+            "group": "Roles & Permissions",
+            "pages": [
+              "reference/roles",
+              "reference/admin-permissions"
+            ]
+          },
+          {
+            "group": "Billing",
+            "pages": [
+              "reference/billing",
+              "reference/subscription"
+            ]
+          },
+          {
+            "group": "API",
+            "pages": [
+              "reference/api-overview",
+              "reference/calendar-export"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "keyFeatures": [
+    "Schedule Grid with 1-week, 2-week, and month views and drag-and-drop shift management",
+    "Draft/Publish workflow — all edits are drafts until explicitly published",
+    "Real-time collaboration with cell locks and presence indicators",
+    "Recurring shifts — day-of-week templates and repeating series",
+    "Shift pickup and swap requests with admin approval workflow",
+    "Dashboard analytics — KPI cards, coverage charts, activity feeds",
+    "Staff management — full employee lifecycle with certifications and roles",
+    "Coverage requirements — define and visualize minimum staffing levels",
+    "Role-based access control with four-tier hierarchy and 16 granular admin permissions",
+    "Invite-only registration with 72-hour invitation tokens",
+    "Print export with configurable layout, legend, and date range",
+    "Multi-tenant subdomain isolation (e.g., acme.dubgrid.com)",
+    "Calendar export (ICS) for personal schedule sync",
+    "Subscription billing via Stripe"
+  ],
+  "publicApiSurface": [
+    "GET /api/calendar — Export authenticated user's shifts as an ICS calendar file",
+    "GET /api/export?type=staff|schedule — Export staff roster or schedule as CSV",
+    "POST /api/send-invite-email — Send invitation email to a new employee",
+    "GET /api/validate-domain — Check if an org subdomain slug is available",
+    "POST /api/request-demo — Submit a demo request from the landing page",
+    "POST /api/stripe/create-checkout — Create a Stripe checkout session for billing",
+    "POST /api/stripe/webhook — Stripe webhook handler for subscription lifecycle events",
+    "Supabase RPC change_user_role — Change a user's organization role"
+  ]
+}
